@@ -16,4 +16,10 @@
 
 ## ライブラリ
 
+### KRS3304R2サーボモータ用
+
 KRS3304R2を動かすため、オリジナルのソースコードに"IcsClass_V210"というライブラリを見つけた。KRS3304R2の[製品ページ](https://kondo-robot.com/product/krs-3304r2-ics)を探したところ、[Arduino用のライブラリ](https://kondo-robot.com/faq/ics-library-a3)が公開されており、配布されていたZipファイルを解凍すると"IcsClass_V300"という恐らくバージョン違いのライブラリを見つけたため、それを利用することにした。
+
+### PS4コントローラ用
+
+以前に使用したことのあるライブラリを使用することを考えたが、レポジトリを見つけられなかったためオリジナルと同じ[ライブラリ](https://github.com/jvpernis/esp32-ps3)を使用することにした。本来esp-idf用のライブラリだが、Arduinoもサポートされている。
