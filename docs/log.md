@@ -48,7 +48,7 @@ IcsHardSerialClass krs(&Serial1,EN_PIN,BAUDRATE,TIMEOUT);
 ```cpp
 krs.begin(); //in setup()
 krs.setPos(int id, int degree); //set servo position
-krs.setStrc(int id, int num); //サーボの硬さ。numが小さいほど柔らかい
+krs.setStrc(int id, int num); //サーボの硬さ。numが小さいほど柔らかい。とりあえず50。
 ```
 
 ### KRS3304R2
