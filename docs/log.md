@@ -23,3 +23,34 @@ KRS3304R2を動かすため、オリジナルのソースコードに"IcsClass_V
 ### PS4コントローラ用
 
 以前に使用したことのあるライブラリを使用することを考えたが、レポジトリを見つけられなかったためオリジナルと同じ[ライブラリ](https://github.com/jvpernis/esp32-ps3)を使用することにした。本来esp-idf用のライブラリだが、Arduinoもサポートされている。
+
+## 使用機器/ライブラリの仕様
+
+### IcsClass_V300
+
+#### 初期設定
+
+```cpp
+#include <IcsHardSerialClass.h>
+
+const byte EN_PIN = 2;        //Arduinoに接続したenableピンのピン番号
+const long BAUDRATE = 115200; //サーボの通信速度
+const int TIMEOUT = 1000;     //サーボとのシリアル通信に設定する応答待ち時間
+
+//インスタンス＋ENピン(2番ピン)およびUARTの指定
+//ボードに接続しているシリアルポートに合わせて&Serialを変更してください。
+//(&Serial / &Serial1 / &Serial2...)
+IcsHardSerialClass krs(&Serial1,EN_PIN,BAUDRATE,TIMEOUT);
+```
+
+#### 関数
+
+```cpp
+krs.begin(); //in setup()
+krs.setPos(int id, int degree); //set servo position
+krs.setStrc(int id, int num); //サーボの硬さ。numが小さいほど柔らかい
+```
+
+### KRS3304R2
+
+可動域±135°(7500±4000)
